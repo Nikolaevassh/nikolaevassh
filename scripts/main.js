@@ -1,0 +1,26 @@
+var myImage = document.querySelector('img');
+
+myImage.onclick = function() {
+    var myScr = myImage.getAttribute('src');
+    if(myScr === 'images/poljot-pchely-vokrug-granata.jpg') {
+        myImage.setAttribute ('src','images/moja-zhena.jpg');
+    } else {
+        myImage.setAttribute ('src','images/poljot-pchely-vokrug-granata.jpg');
+    }
+}
+var myButton = document.querySelector('button');
+var myHeading = document.querySelector('h1');
+function setUserName() {
+    var myName = prompt('Please,enter your name.');
+    localStorage.setItem('name', myName);
+    myHeading.innerHTML = 'Mozilla is cool, ' + myName;
+    }
+    if(!localStorage.getItem('name')) {
+        setUserName();
+        } else {
+            var storedName = localStorage.getItem('name');
+            myHeading.innerHTML = 'Mozilla is cool, ' + storedName;
+            }
+myButton.onclick = function() {
+    setUserName();
+}
